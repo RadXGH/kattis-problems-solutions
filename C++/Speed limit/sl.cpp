@@ -1,25 +1,29 @@
 #include <iostream>
+#include <stdio.h>
+
 using namespace std;
 
 int main() {
-	int n,i,s[1][11],t[1][11],x[1][11],y[1][11],a[1][11];
-	y[i][11]=0;
-	
+	int n, s, t;
+
 	do {
-		cin>>n;
-		for (i=0;i<n;i++) {
-			cin>>s[i][11]>>t[i][11];
-			if (i=0) {
-				x[i][11]=s[i][11]*t[i][11];
-			} else {
-				x[i][11]=s[i][11]*t[i][11]-t[i-1][11];
-			}
+		int tPrev = 0;
+		int cnt = 0, ans = 0;
+		int miles = 0;
+		
+		scanf("%d", &n);
+		for(int i = 1; i <= n; i++) {
+			scanf("%d%d", &s, &t);
+			miles += s * (t - tPrev);
+			tPrev = t;
+			cnt++;
 		}
-		for (i=0;i<n;i++) {
-			x[i][11]+=x[i][11];
-		cout<<y[i]<<"miles\n"<<endl;
-		cin>>n;
-	} while (n!=-1);
-	
-	return 0;	
+
+		if(n != -1) {
+			printf("%d%s", miles, " miles");
+			puts("");
+		}
+	} while(n != -1);
+
+	return 0;
 }

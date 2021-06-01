@@ -1,26 +1,25 @@
 #include <iostream>
+#include <stdio.h>
+
+#define pi 3.141592654
+
 using namespace std;
 
 int main() {
-	double r[1][1001],x[1][1001],a[1][1001],b[1][1001];
-	int m[1][1001],c[1][1001];
-	int i;
-	
-	for (i=0;i<1000;i++) {
-		cin >> r[i][1001] >> m[i][1001] >> c[i][1001];
-		x[i][1001]=m[i][1001]/c[i][1001];
-		if (r[i][1001]==0&&m[i][1001]==0&&c[i][1001]==0) {
-			break;
-		} 
-	}
-	
-		for (i=0;i<1000;i++) {
-		x[i][1001]=m[i][1001]/c[i][1001];
-		c
-		if (r[i][1001]==0&&m[i][1001]==0&&c[i][1001]==0) {
-			break;
-		} 
-	}
-	
+	double r;
+	int m, c;
+
+	do {
+		double area, est;
+
+		scanf("%lf %d %d", &r, &m, &c);
+		area = (double) pi * r * r;
+		est = (double) 4 * c / m * r * r;
+
+		if(r != 0 && m != 0 && c != 0) 
+			printf("%.7lf %lf\n", area, est);
+
+	} while(r != 0 && m != 0 && c != 0);
+
 	return 0;
 }
